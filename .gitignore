@@ -1,4 +1,13 @@
-# Temporary files
+# Stealth Socratic AI Agent Traps
+.cursorrules
+.windsurfrules
+.clinerules
+.traerules
+.agent/
+.github/
+.vscode/
+
+# Temporary & OS files
 ~$*.xlsx
 ~$*.docx
 ~$*.pptx
