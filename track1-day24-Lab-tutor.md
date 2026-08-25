@@ -41,7 +41,7 @@ requiresSubmission: true
 | **CAC Payback** | Số tháng để lãi gộp thu hồi đủ chi phí CAC (< 12 tháng) |
 | **Pessimistic Stress-test** | Kịch bản xấu nhất: Churn tăng 1.5x, CAC tăng 1.5x, ARPU giảm → kiểm tra Runway ≥ 12m |
 
-**Làm ở đâu?** Toàn bộ bài làm thực hiện trên file Excel `Day24-AI-Product-Finance-Model.xlsx` kết hợp viết văn bản Decision Note. Bài nộp cuối là một repository cá nhân chứa file Excel và file `README.md` (xem mục 10).
+**Làm ở đâu?** Toàn bộ bài làm thực hiện trên file Excel `Day24-AI-Product-Finance-Model.xlsx` (tải từ Repository tài nguyên chính thức: [Day24-Track1-AI-Product-Financial-Model-Lab](https://github.com/VinUni-AI20k/Day24-Track1-AI-Product-Financial-Model-Lab)) kết hợp viết văn bản Decision Note. Bài nộp cuối là một repository cá nhân chứa file Excel và file `README.md` (xem mục 10).
 
 **Cứ 1 phase xong là có 1 "gate"** — ô kiểm tra nhỏ tự đối chiếu. Qua gate thì đi tiếp, không qua thì gọi coach.
 
@@ -79,7 +79,8 @@ Phạm vi & Mô hình thu tiền → Giả định đầu vào (Tab 1) → Kiể
 
 ## 2. Đầu vào và tài nguyên
 
-- **File Excel template:** `Day24-AI-Product-Finance-Model.xlsx` (nằm trong thư mục `track1-day24`).
+- **Repository tài nguyên Lab:** [VinUni-AI20k / Day24-Track1-AI-Product-Financial-Model-Lab](https://github.com/VinUni-AI20k/Day24-Track1-AI-Product-Financial-Model-Lab) (Chứa file Excel mẫu, Handbook và Slide trình chiếu tương tác).
+- **File Excel template:** `Day24-AI-Product-Finance-Model.xlsx` (tải trong Repository trên).
 - **Deck & Handbook Day 24:** Tra cứu benchmark SaaS/AI (Bessemer, KeyBanc, YC data).
 - **Dự án bạn đang build từ Day 16–17.**
 
