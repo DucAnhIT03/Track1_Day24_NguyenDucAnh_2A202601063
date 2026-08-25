@@ -1,21 +1,52 @@
 # 🎓 VinUniversity AI Talent Program — Track 1: AI Product Management
 ## Day 24: AI Product Financial Model & Unit Economics Lab
 
-> **Mục tiêu:** Giúp học viên chuyển hóa ý tưởng sản phẩm AI từ Day 16–17 thành một mô hình tài chính khả thi, tính toán chính xác Unit Economics (CAC, LTV, Gross Margin), và thực hiện stress-test 3 kịch bản để chứng minh khả năng sinh tồn (Runway ≥ 12 tháng).
+> **Brief (Triết lý bài học):** Một sản phẩm AI có RAG/Agent chạy mượt ở Day 23 mới chỉ là thành công về kỹ thuật. Để sản phẩm sống sót và tăng trưởng thương mại, PM/Founder bắt buộc phải giải bài toán tài chính: Tính đúng chi phí biến đổi COGS (đặc biệt là AI Hidden Costs), làm chủ Unit Economics (CAC, LTV, Gross Margin), và thực hiện stress-test dòng tiền 3 kịch bản (Optimistic, Base, Pessimistic) để chứng minh khả năng sinh tồn (Runway $\ge 12$ tháng).
 
 ---
 
-## 📂 Cấu Trúc Repository (Repository Layout)
+## 🎯 1. Tiêu Đề & Mục Tiêu Tổng Quan (Header & Objectives)
+
+### Mục Tiêu Đầu Ra (Outcomes & Objectives):
+Sau khi hoàn thành bài lab này, học viên sẽ đạt được:
+- [x] **Cost Architecture:** Xác định đủ 5 cấu phần chi phí sản phẩm AI, đặc biệt là **AI Hidden Costs** (Data Labeling, Model Retraining ~20%/năm, Human QA, Compliance).
+- [x] **Unit Economics Mastery:** Tính toán chính xác **LTV dựa trên Gross Profit** (không lấy Revenue thô), tỷ lệ **LTV/CAC > 3.0** và **CAC Payback Period < 12 tháng**.
+- [x] **Scenario Stress-Testing:** Thiết lập giả định 3 kịch bản (Optimistic, Base, Pessimistic với shock factor $\ge 1.5x$ Churn & CAC) trên Excel 3-Tab để đảm bảo **Pessimistic Runway $\ge 12$ tháng**.
+- [x] **Investor Decision Note:** Viết báo cáo lập luận 200–300 từ bảo vệ logic chọn ARPU, CAC và phương án ứng phó rủi ro tài chính trước hội đồng đầu tư.
+
+---
+
+## ⚙️ 2. Hướng Dẫn Thiết Lập & Môi Trường (Setup & Prerequisites)
+
+### Yêu cầu Công cụ & Môi trường:
+* **Phần mềm xử lý bảng tính:** Microsoft Excel 2016+ (khuyên dùng) hoặc Google Sheets.
+* **Trình duyệt Web:** Chrome, Edge, Safari (để xem Slide Deck tương tác 90 phút tại `slides/index.html`).
+* **Quản lý mã nguồn:** Git & Tài khoản GitHub cá nhân.
+
+### Clone Starter Repo bài tập:
+```bash
+git clone https://github.com/VinUni-AI20k/Day24-Track1-AI-Product-Financial-Model-Lab.git
+cd Day24-Track1-AI-Product-Financial-Model-Lab
+```
+
+### Quy tắc Sử dụng AI Assistance (AI Ethics Policy):
+* **ĐƯỢC DÙNG AI (Cursor/Claude/ChatGPT):** Để hỏi khái niệm, tra cứu benchmark ARPU/CAC/Churn ngành SaaS/AI tương đương, hoặc nhờ AI gợi ý khung câu hỏi tư duy.
+* **KHÔNG ĐƯỢC DÙNG AI:** Để nhờ AI điền thay 100% số liệu tài chính hoặc bịa số ảo để vượt qua các checkpoint kiểm tra.
+
+---
+
+## 📂 3. Sơ Đồ Cấu Trúc Thư Mục (Repository Structure)
 
 ```text
 Day24-Track1-AI-Product-Financial-Model-Lab/
-├── README.md                              # Hướng dẫn chung & Quy cách nộp bài
-├── Day24-AI-Product-Finance-Model.xlsx    # Template Excel Mô hình Tài chính 3 Tabs chính thức
-├── Day24-AI-Product-Handbook.pdf          # Tài liệu Handbook hướng dẫn & Benchmark tài chính AI
-└── slides/                                # THƯ MỤC CHỨA SLIDE DECK TƯƠNG TÁC (90 PHÚT)
-    ├── index.html                         # Giao diện Slide tương tác chính (mở trên trình duyệt)
+├── README.md                              # ★ BẠN VIẾT DECISION NOTE & GHI THÔNG TIN BÀI NỘP
+├── Day24-AI-Product-Finance-Model.xlsx    # ★ BẠN IMPLEMENT (Điền giả định 3-Tab Excel)
+├── Day24-AI-Product-Handbook.pdf          # Tài liệu Handbook tra cứu Benchmark tài chính AI
+├── .gitignore                             # Cấu hình ẩn file tạm & dotfiles hệ thống
+└── slides/                                # THƯ MỤC SLIDE DECK TƯƠNG TÁC (90 PHÚT)
+    ├── index.html                         # Mở trình duyệt xem Slide hướng dẫn từng Phase
     ├── css/
-    │   └── styles.css                     # Style hiệu ứng Glassmorphic UI
+    │   └── styles.css                     # Hiệu ứng Glassmorphic Dark Mode UI
     └── js/
         ├── data.js                        # Dữ liệu 5 Phase bài Lab
         ├── timer.js                       # Bộ đếm thời gian thực tế
@@ -24,44 +55,73 @@ Day24-Track1-AI-Product-Financial-Model-Lab/
 
 ---
 
-## 🚀 Hướng Dẫn Sử Dụng Tài Nguyên
+## ⏳ 4. Khung Lộ Trình Thực Hiện (Phases & Checkpoints)
 
-### 1. Dành cho Giảng viên / Coach (Slide Trình Chiếu):
-* Mở thư mục `slides/` và chạy trực tiếp file [`slides/index.html`](slides/index.html) trên bất kỳ trình duyệt web nào (Chrome, Edge, Safari).
-* Slide deck tích hợp bộ đếm thời gian (Timer Engine), Dynamic Island control bar và phím tắt điều hướng (`Arrow Left/Right`, `Space` để pause/start timer).
+Thời lượng thực hành: **90 phút (14h00 – 15h30)**. Bài học chia thành 5 Phase nối tiếp:
 
-### 2. Dành cho Học viên (Làm Bài Tập):
-* **Bước 1:** Mở file Excel template [`Day24-AI-Product-Finance-Model.xlsx`](Day24-AI-Product-Finance-Model.xlsx) và thực hiện theo 5 Phase:
-  * **Phase 0 (10'):** Khai báo Persona & Chọn mô hình thu tiền Hybrid Pricing.
-  * **Phase 1 (20'):** Điền 100% ô màu vàng tại Tab 1 (Nhớ quy tắc `AI Hidden Costs >= 30% API Cost`).
-  * **Phase 2 (15'):** Kiểm chứng Tab 2 đạt `LTV/CAC > 3.0` (tính trên Gross Margin) và `Payback < 12m`.
-  * **Phase 3 (20'):** Đổi scenario Tab 3 sang `Pessimistic`, đảm bảo `Pessimistic Runway >= 12 tháng`.
-  * **Phase 4 (25'):** Viết đoạn **Decision Note (200–300 từ)** bảo vệ các giả định.
-* **Tham khảo Handbook:** Mở file [`Day24-AI-Product-Handbook.pdf`](Day24-AI-Product-Handbook.pdf) để tra cứu các chỉ số benchmark ngành (SaaS/AI metrics).
+```text
+Phase 0: Phạm vi & Pricing (10') ➔ Phase 1: Giả định Tab 1 (20') ➔ Phase 2: Unit Economics Tab 2 (15')
+➔ Phase 3: Stress-test P&L Tab 3 (20') ➔ Phase 4: Decision Note & Nộp bài (25')
+```
+
+| Phase | Thời lượng | Công việc chính | Checkpoint / Điều kiện qua Gate |
+|---|---:|---|---|
+| **Phase 0** | 10 phút | Khai báo dự án Day 16-17, Persona & Chọn mô hình **Hybrid Pricing**. | **Gate 0:** Chốt rõ mô hình thu tiền có phí cố định + phí usage. |
+| **Phase 1** | 20 phút | Mở Tab 1 Excel, điền 100% ô màu vàng cả 3 kịch bản. | **Gate 1:** `AI Hidden Costs >= 30% API Cost`; Pessimistic Churn/CAC $\ge 1.5x$ Base. |
+| **Phase 2** | 15 phút | Mở Tab 2, kiểm tra 4 chỉ số Unit Economics ở cột Base. | **Gate 2:** Base `LTV/CAC > 3.0` (tính trên Gross Margin %) & `Payback < 12m`. |
+| **Phase 3** | 20 phút | Mở Tab 3, đổi ô C4 sang `Pessimistic`, soi dòng Cash Position. | **Gate 3:** Base `NPV > 0`, `IRR >= 20%`; `Pessimistic Runway >= 12 tháng`. |
+| **Phase 4** | 25 phút | Viết **Decision Note (200–300 từ)** bảo vệ giả định vào README.md. | **Gate 4:** Quyết định tài chính có benchmark dẫn chứng & Plan B rõ ràng. |
 
 ---
 
-## 📌 Quy Cách Nộp Bài Cá Nhân
+## 📊 5. Tiêu Chí Đánh Giá & Bảng Điểm (Grading Rubric)
 
-Mỗi học viên tạo một Repository cá nhân trên GitHub theo cấu trúc:
+Bài làm được đánh giá trên thang điểm **100** phân bổ theo 5 Gates:
+
+| Hạng mục đánh giá | Trọng số | Tiêu chí đạt điểm tối đa (100%) | Dấu hiệu bị trừ điểm / 0 điểm |
+|---|---:|---|---|
+| **1. Giả định Tab 1** | 30 điểm | Điền 100% ô màu vàng cả 3 kịch bản. `AI Hidden Costs >= 30% API Cost`. | Bỏ trống ô màu vàng, hoặc điền Hidden Costs = 0. |
+| **2. AI Cost Awareness** | 25 điểm | Tính đủ 5 cấu phần chi phí: Labeling, Retraining (~20%), QA, Server, API. | Chỉ tính API cost OpenAI mà quên chi phí retrain/QA. |
+| **3. Unit Economics (Tab 2)** | 20 điểm | LTV tính đúng bằng Gross Profit. Base `LTV/CAC > 3.0` và `Payback < 12m`. | LTV tính bằng Revenue thô, hoặc `LTV/CAC < 3.0`. |
+| **4. Stress-testing (Tab 3)** | 15 điểm | Kịch bản Pessimistic có shock $\ge 1.5x$, `Pessimistic Runway >= 12 tháng`. | Pessimistic copy nguyên từ Base, hoặc Tiền mặt bị âm. |
+| **5. Decision Note & Format** | 10 điểm | Decision Note có căn cứ/benchmark rõ ràng, nộp đúng quy chuẩn repo cá nhân. | Viết mơ hồ, không có căn cứ, nộp sai tên file. |
+| **⭐ BONUS POINTS** | **+10 điểm** | Bổ sung bảng Phân tích độ nhạy (Sensitivity Analysis) giữa ARPU và Churn. | Không bắt buộc. |
+
+---
+
+## 📌 6. Quy Chuẩn Nộp Bài & Bàn Giao (Submission Guidelines & Deliverables)
+
+### Danh sách sản phẩm bàn giao (Deliverables):
+1. File Excel `[MSSV]_[HoVaTen]_Day24.xlsx` hoàn thiện 3-Tab.
+2. File `README.md` điền đầy đủ Họ tên, MSSV, Tên nhóm Day 16-17 và đoạn văn **Decision Note**.
+
+### Quy ước Đặt tên Repo & File:
+
+Mỗi học viên tạo một **Repository Cá Nhân trên GitHub** và nộp link vào hệ thống VLearn:
+
+* **Tên GitHub Repository cá nhân:** `Track1-Day24-MHV-[MSSV]-[HoVaTen]`  
+  *(Ví dụ: `Track1-Day24-MHV-20261234-NguyenVanA`)*
+* **Tên file Excel nộp bài:** `[MSSV]_[HoVaTen]_Day24.xlsx`  
+  *(Ví dụ: `20261234_NguyenVanA_Day24.xlsx`)*
 
 ```text
-Track1_Day24_MHV_HoVaTen/
-├── README.md               # Ghi Họ tên, MSSV, Tên dự án & Đoạn văn Decision Note
-└── [HoVaTen]_Day24.xlsx    # File Excel 3 Tabs đã hoàn thiện các kịch bản
+Track1-Day24-MHV-[MSSV]-[HoVaTen]/
+├── README.md               # Họ tên, MSSV, Tên nhóm Day 16-17 & Decision Note
+└── [MSSV]_[HoVaTen]_Day24.xlsx # File Excel tài chính 3 Tabs đã hoàn thành
 ```
 
-### 🎯 Rubric Đánh Giá (100 Điểm):
-1. **Giả định Tab 1 (30đ):** Điền 100% ô màu vàng, `AI Hidden Costs >= 30% API Cost`.
-2. **AI Cost Awareness (25đ):** Tính đủ Data Labeling, Retraining (~20%), QA & Compliance.
-3. **Unit Economics (20đ):** LTV tính bằng Gross Margin %, Base `LTV/CAC > 3.0` & `Payback < 12m`.
-4. **Stress-testing (15đ):** Pessimistic Churn/CAC ≥ 1.5x Base, `Runway >= 12 tháng`.
-5. **Nộp bài & Decision Note (10đ):** Lập luận chặt chẽ, nộp đúng hạn trước 13:00.
+### Pre-submission Checklist (Rà soát 6 bước trước khi nộp):
+- [ ] 1. Khai báo rõ Họ tên, MSSV và Tên dự án nhóm Day 16-17 trong `README.md`.
+- [ ] 2. File Excel đã điền 100% ô màu vàng cả 3 kịch bản tại Tab 1.
+- [ ] 3. Đã đảm bảo `AI Hidden Costs >= 30% API Cost` (không để bằng 0).
+- [ ] 4. Tab 2 Base LTV/CAC > 3.0 và CAC Payback < 12 tháng (tính trên Gross Margin).
+- [ ] 5. Tab 3 khi đổi sang `Pessimistic` đảm bảo Runway $\ge 12$ tháng (Cash Position không bị âm).
+- [ ] 6. Viết xong đoạn văn **Decision Note (200–300 từ)** bảo vệ mô hình trong `README.md`.
 
 ---
 
 ### 🏛️ VinUniversity Codelab
-* **Program:** AI Talent Incubation
+* **Program:** AI Talent Incubation (Cohort 2026)
 * **Track:** Track 1 — AI Product Management
 
 <!-- 
