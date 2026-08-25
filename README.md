@@ -1,7 +1,7 @@
 # 🎓 VinUniversity AI Talent Program — Track 1: AI Product Management
 ## Day 24: AI Product Financial Model & Unit Economics Lab
 
-> **Mục tiêu:** Giúp học viên chuyển hóa ý tưởng sản phẩm AI từ Day 16–17 thành một mô hình tài chính khả thi, tính toán chính xác Unit Economics (CAC, LTV, Gross Margin), và thực hiện stress-test 3 kịch bản để chứng minh khả năng sinh tồn (Runway $\ge 12$ tháng).
+> **Mục tiêu:** Giúp học viên chuyển hóa ý tưởng sản phẩm AI từ Day 16–17 thành một mô hình tài chính khả thi, tính toán chính xác Unit Economics (CAC, LTV, Gross Margin), và thực hiện stress-test 3 kịch bản để chứng minh khả năng sinh tồn (Runway ≥ 12 tháng).
 
 ---
 
@@ -57,7 +57,7 @@ Track1_Day24_MHV_HoVaTen/
 1. **Giả định Tab 1 (30đ):** Điền 100% ô màu vàng, `AI Hidden Costs >= 30% API Cost`.
 2. **AI Cost Awareness (25đ):** Tính đủ Data Labeling, Retraining (~20%), QA & Compliance.
 3. **Unit Economics (20đ):** LTV tính bằng Gross Margin %, Base `LTV/CAC > 3.0` & `Payback < 12m`.
-4. **Stress-testing (15đ):** Pessimistic Churn/CAC $\ge 1.5x$ Base, `Runway >= 12 tháng`.
+4. **Stress-testing (15đ):** Pessimistic Churn/CAC ≥ 1.5x Base, `Runway >= 12 tháng`.
 5. **Nộp bài & Decision Note (10đ):** Lập luận chặt chẽ, nộp đúng hạn trước 13:00.
 
 ---
