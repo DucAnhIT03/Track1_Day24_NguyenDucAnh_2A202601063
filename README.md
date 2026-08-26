@@ -1,5 +1,5 @@
 # 🎓 VinUniversity AI Talent Program — Track 1: AI Product Management
-## Day 24: AI Product Financial Model & Unit Economics Lab
+## Day 24: AI Product Financial Model & Unit Economics Lab!
 
 > **Brief (Triết lý bài học):** Một sản phẩm AI có RAG/Agent chạy mượt ở Day 23 mới chỉ là thành công về kỹ thuật. Để sản phẩm sống sót và tăng trưởng thương mại, PM/Founder bắt buộc phải giải bài toán tài chính: Tính đúng chi phí biến đổi COGS (đặc biệt là AI Hidden Costs), làm chủ Unit Economics (CAC, LTV, Gross Margin), và thực hiện stress-test dòng tiền 3 kịch bản (Optimistic, Base, Pessimistic) để chứng minh khả năng sinh tồn (Runway ≥ 12 tháng).
 
