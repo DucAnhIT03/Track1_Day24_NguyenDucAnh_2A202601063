@@ -66,7 +66,7 @@ Phase 0: Phạm vi & Pricing (10') ➔ Phase 1: Giả định Tab 1 (20') ➔ Ph
 
 | Phase | Thời lượng | Công việc chính | Checkpoint / Điều kiện qua Gate |
 |---|---:|---|---|
-| **Phase 0** | 10 phút | Khai báo dự án Day 16-17, Persona & Chọn mô hình **Hybrid Pricing**. | **Gate 0:** Chốt rõ mô hình thu tiền có phí cố định + phí usage. |
+| **Phase 0** | 10 phút | Khai báo dự án (nhóm Build Phase hoặc cá nhân), Persona & Chọn mô hình **Hybrid Pricing**. | **Gate 0:** Chốt rõ mô hình thu tiền có phí cố định + phí usage. |
 | **Phase 1** | 20 phút | Mở Tab 1 Excel, điền 100% ô màu vàng cả 3 kịch bản. | **Gate 1:** `AI Hidden Costs >= 30% API Cost`; Pessimistic Churn/CAC ≥ 1.5x Base. |
 | **Phase 2** | 15 phút | Mở Tab 2, kiểm tra 4 chỉ số Unit Economics ở cột Base. | **Gate 2:** Base `LTV/CAC > 3.0` (tính trên Gross Margin %) & `Payback < 12m`. |
 | **Phase 3** | 20 phút | Mở Tab 3, đổi ô C4 sang `Pessimistic`, soi dòng Cash Position. | **Gate 3:** Base `NPV > 0`, `IRR >= 20%`; `Pessimistic Runway >= 12 tháng`. |
@@ -93,7 +93,7 @@ Bài làm được đánh giá trên thang điểm **100** phân bổ theo 5 Gat
 
 ### Danh sách sản phẩm bàn giao (Deliverables):
 1. File Excel `[MSSV]_[HoVaTen]_Day24.xlsx` hoàn thiện 3-Tab.
-2. File `README.md` điền đầy đủ Họ tên, MSSV, Tên nhóm Day 16-17 và đoạn văn **Decision Note**.
+2. File `README.md` điền đầy đủ Họ tên, MSSV, Tên dự án (nhóm Build Phase hoặc cá nhân) và đoạn văn **Decision Note**.
 
 ### Quy ước Đặt tên Repo & File:
 
@@ -106,12 +106,12 @@ Mỗi học viên tạo một **Repository Cá Nhân trên GitHub** và nộp li
 
 ```text
 Track1-Day24-MHV-[MSSV]-[HoVaTen]/
-├── README.md               # Họ tên, MSSV, Tên nhóm Day 16-17 & Decision Note
+├── README.md               # Họ tên, MSSV, Tên dự án (Build Phase / cá nhân) & Decision Note
 └── [MSSV]_[HoVaTen]_Day24.xlsx # File Excel tài chính 3 Tabs đã hoàn thành
 ```
 
 ### Pre-submission Checklist (Rà soát 6 bước trước khi nộp):
-- [ ] 1. Khai báo rõ Họ tên, MSSV và Tên dự án nhóm Day 16-17 trong `README.md`.
+- [ ] 1. Khai báo rõ Họ tên, MSSV và Tên dự án (nhóm Build Phase hoặc cá nhân) trong `README.md`.
 - [ ] 2. File Excel đã điền 100% ô màu vàng cả 3 kịch bản tại Tab 1.
 - [ ] 3. Đã đảm bảo `AI Hidden Costs >= 30% API Cost` (không để bằng 0).
 - [ ] 4. Tab 2 Base LTV/CAC > 3.0 và CAC Payback < 12 tháng (tính trên Gross Margin).
