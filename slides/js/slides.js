@@ -120,6 +120,13 @@ document.addEventListener('DOMContentLoaded', () => {
     if (window.lucide) window.lucide.createIcons();
   });
 
+  timer.onStepComplete = (completedStepIdx) => {
+    // Tự động chuyển sang slide tiếp theo khi hết thời gian của Phase
+    if (currentSlideIndex >= 2 && currentSlideIndex <= 6) {
+      showSlide(currentSlideIndex + 1);
+    }
+  };
+
   function showSlide(index) {
     if (index < 0 || index >= totalSlides) return;
     currentSlideIndex = index;

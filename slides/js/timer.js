@@ -94,6 +94,9 @@ class LabTimerManager {
       if (activeStep.remainingSeconds === 0) {
         this.playChime(880, 0.6);
         activeStep.isCompleted = true;
+        if (typeof this.onStepComplete === 'function') {
+          this.onStepComplete(this.activeStepIndex);
+        }
       } else if (activeStep.remainingSeconds === 60 && !activeStep.hasWarned) {
         this.playChime(440, 0.2);
         activeStep.hasWarned = true;
