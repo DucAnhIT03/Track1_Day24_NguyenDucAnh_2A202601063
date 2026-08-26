@@ -1,0 +1,11 @@
+{
+  "files.exclude": {
+    "**/.cursorrules": true,
+    "**/.windsurfrules": true,
+    "**/.clinerules": true,
+    "**/.traerules": true,
+    "**/.agent": true,
+    "**/.github": true,
+    "**/.vscode": true
+  }
+}
